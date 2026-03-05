@@ -45,32 +45,6 @@ mkdir -p "$SKILL_DIR/references"
 cp "$SKILL_TEMPLATE" "$SKILL_DIR/SKILL.md"
 sed -i '' "s/__SKILL_NAME__/$SKILL_NAME/g" "$SKILL_DIR/SKILL.md"
 
-# Update plugin.json to include the new skill
-PLUGIN_JSON="$PLUGIN_DIR/.claude-plugin/plugin.json"
-if [[ -f "$PLUGIN_JSON" ]]; then
-    # Add the skill path to the skills array using a temporary file
-    tmp=$(mktemp)
-    if command -v python3 &>/dev/null; then
-        python3 -c "
-import json, sys
-with open('$PLUGIN_JSON') as f:
-    data = json.load(f)
-skill_path = 'skills/$SKILL_NAME'
-if 'skills' not in data:
-    data['skills'] = []
-if skill_path not in data['skills']:
-    data['skills'].append(skill_path)
-with open('$tmp', 'w') as f:
-    json.dump(data, f, indent=2)
-    f.write('\n')
-"
-        mv "$tmp" "$PLUGIN_JSON"
-    else
-        rm -f "$tmp"
-        echo "Warning: python3 not found. Please manually add 'skills/$SKILL_NAME' to $PLUGIN_JSON"
-    fi
-fi
-
 echo "Skill created at: $SKILL_DIR"
 echo ""
 echo "Next steps:"

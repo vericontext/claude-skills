@@ -44,6 +44,7 @@ fi
 find "$PLUGIN_DIR" -type f | while read -r file; do
     sed -i '' "s/__PLUGIN_NAME__/$PLUGIN_NAME/g" "$file"
     sed -i '' "s/__PLUGIN_DESCRIPTION__/A Claude Code skill plugin./g" "$file"
+    sed -i '' "s/__AUTHOR_NAME__/vericontext/g" "$file"
     sed -i '' "s/__SKILL_NAME__/$SKILL_NAME/g" "$file"
 done
 

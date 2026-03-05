@@ -1,7 +1,6 @@
 ---
 name: __SKILL_NAME__
-description: "This skill should be used when the user wants to..."
-trigger: "/__SKILL_NAME__"
+description: This skill should be used when the user asks to "__SKILL_NAME__", wants to...
 ---
 
 # __SKILL_NAME__
@@ -11,7 +10,7 @@ trigger: "/__SKILL_NAME__"
 ## When to Use
 
 Use this skill when:
-- The user invokes `/__SKILL_NAME__`
+- The user asks to "__SKILL_NAME__"
 - <!-- Add more trigger conditions -->
 
 ## Instructions

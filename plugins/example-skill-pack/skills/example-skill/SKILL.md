@@ -1,7 +1,6 @@
 ---
 name: example-skill
-description: "This skill should be used when the user asks for a greeting message or wants to test that the plugin system is working correctly."
-trigger: "/example"
+description: This skill should be used when the user asks for a greeting message, wants to test that the plugin system is working correctly, or asks to "demonstrate skills" or "show example skill".
 ---
 
 # Example Skill

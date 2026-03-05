@@ -29,9 +29,11 @@ plugin-name/
 ## SKILL.md Writing Rules
 
 ### Frontmatter
-- `name`: kebab-case skill name
-- `description`: 3rd person, starts with "This skill should be used when..."
-- `trigger`: Specific trigger phrase for activation
+- `name` (required): kebab-case skill name
+- `description` (required): Trigger conditions - starts with "This skill should be used when..."
+  - Include specific trigger phrases users might say
+  - Include keywords that indicate relevance
+- `version` (optional): Semantic version number
 
 ### Body
 - Use imperative/infinitive form ("To create X, do Y")
@@ -43,10 +45,24 @@ plugin-name/
 ```yaml
 ---
 name: my-skill
-description: "This skill should be used when the user wants to..."
-trigger: "/my-skill"
+description: This skill should be used when the user asks to "do X", "create Y", or discusses topic-area.
+version: 1.0.0
 ---
 ```
+
+### plugin.json Format
+```json
+{
+  "name": "plugin-name",
+  "version": "0.1.0",
+  "description": "What this plugin does.",
+  "author": {
+    "name": "author-name"
+  }
+}
+```
+
+Skills are auto-discovered from the `skills/` directory - no need to list them in plugin.json.
 
 ## Conventions
 
@@ -60,13 +76,13 @@ trigger: "/my-skill"
 
 ### Marketplace (recommended)
 ```bash
-claude marketplace add <repo-url>
+claude plugin marketplace add <repo-url>
 claude plugin install <plugin-name>
 ```
 
-### Direct GitHub install
+### Validate
 ```bash
-claude plugin add <github-url>
+claude plugin validate plugins/<plugin-name>
 ```
 
 ### Local testing
