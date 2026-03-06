@@ -45,6 +45,16 @@
       },
       "source": "./plugins/motion-graphics",
       "category": "development"
+    },
+    {
+      "name": "paper-dissector",
+      "description": "Deeply analyze academic papers from PDF. Extracts structured analysis, generates markdown summaries, renders visual summary cards, and enables interactive Q&A.",
+      "version": "0.1.0",
+      "author": {
+        "name": "vericontext"
+      },
+      "source": "./plugins/paper-dissector",
+      "category": "productivity"
     }
   ]
 }
