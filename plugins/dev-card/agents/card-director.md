@@ -144,30 +144,31 @@ No npm, no Node.js, no build step required. Claude writes the SVG files directly
 
 Convert SVG to PNG for direct Twitter/X upload. Try the following tools in order — use the first one that succeeds:
 
-1. **qlmanage** (macOS built-in):
+1. **rsvg-convert** (most reliable SVG renderer, `brew install librsvg`):
    ```bash
-   qlmanage -t -s 2400 -o $OUTPUT_DIR $OUTPUT_DIR/dev-card.svg 2>/dev/null && mv $OUTPUT_DIR/dev-card.svg.png $OUTPUT_DIR/dev-card.png
+   rsvg-convert -w 2400 -h 1350 $OUTPUT_DIR/dev-card.svg -o $OUTPUT_DIR/dev-card.png
    ```
-   Note: use `-s 2400` (2x) for crisp rendering. qlmanage clips at the viewBox boundary, so the SVG must have all content within the viewBox.
+   Note: 2400x1350 = 2x for crisp rendering. rsvg-convert faithfully respects the SVG viewBox and produces pixel-perfect output.
 
-2. **rsvg-convert** (Linux, commonly pre-installed):
-   ```bash
-   rsvg-convert -w 1200 $OUTPUT_DIR/dev-card.svg -o $OUTPUT_DIR/dev-card.png
-   ```
-
-3. **inkscape** (cross-platform):
+2. **inkscape** (cross-platform):
    ```bash
    inkscape $OUTPUT_DIR/dev-card.svg --export-type=png --export-filename=$OUTPUT_DIR/dev-card.png --export-width=1200
    ```
 
-4. **ImageMagick convert** (cross-platform):
+3. **ImageMagick convert** (cross-platform):
    ```bash
-   convert $OUTPUT_DIR/dev-card.svg $OUTPUT_DIR/dev-card.png
+   convert -density 200 $OUTPUT_DIR/dev-card.svg $OUTPUT_DIR/dev-card.png
    ```
+
+4. **qlmanage** (macOS built-in, last resort — may clip SVG content):
+   ```bash
+   qlmanage -t -s 2400 -o $OUTPUT_DIR $OUTPUT_DIR/dev-card.svg 2>/dev/null && mv $OUTPUT_DIR/dev-card.svg.png $OUTPUT_DIR/dev-card.png
+   ```
+   Warning: qlmanage often misinterprets the SVG viewBox and clips the right side. Only use as a fallback.
 
 To check which tool is available:
 ```bash
-command -v qlmanage || command -v rsvg-convert || command -v inkscape || command -v convert
+command -v rsvg-convert || command -v inkscape || command -v convert || command -v qlmanage
 ```
 
 If `--badge` was requested, also convert `dev-card-badge.svg` to `dev-card-badge.png` using the same tool (with width 800).

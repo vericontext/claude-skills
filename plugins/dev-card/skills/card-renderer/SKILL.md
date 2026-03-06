@@ -44,7 +44,7 @@ Using the template from card-templates.md:
 2. Insert persona data (title, description, badges, fun stat)
 3. The 6 stat boxes and rank badge are already defined in the template — just replace the `{{PLACEHOLDER}}` values (COMMITS, STREAK, ADD_DEL_RATIO, PEAK_HOUR, PEAK_DAY, CONVENTIONAL_PCT, RANK)
 4. Build the language bar as SVG `<rect>` elements with colors from `${CLAUDE_PLUGIN_ROOT}/skills/card-renderer/references/language-colors.md`
-5. Generate 84 `<rect>` elements for `{{HEATMAP_CELLS}}` from `git-analysis.json` heatmap data (see template comments for positioning and color rules)
+5. Generate 84 `<rect>` elements for `{{HEATMAP_CELLS}}` from `git-analysis.json` heatmap data. The heatmap is placed in the **left column below Author/repo** (origin x=48, y=430) with 10x10 cells and 2px gap (12px pitch). See template comments for exact positioning and color rules.
 6. Write the complete SVG to `$OUTPUT_DIR/dev-card.svg`
 7. If `--badge`, also write `$OUTPUT_DIR/dev-card-badge.svg`
 
@@ -95,6 +95,7 @@ The card viewBox is exactly 1200x675. ALL content MUST fit within this boundary.
 - No text or element may extend beyond x=1140 (60px right margin). This includes text rendered at large font sizes — estimate monospace text width as `charCount * fontSize * 0.6`.
 - No text or element may extend beyond y=660 (15px bottom margin).
 - Fun stat text: max 90 characters per line. If longer, wrap to a second `<tspan>`.
+- Description text: wrap at word boundaries only (never split a word mid-character). Each line max 50 characters, max 2 lines.
 - Stats row: if using a horizontal layout, limit to 4 stats max. Use shorter labels (e.g. "+200K" instead of "+200,892") if numbers would overflow.
 - Number formatting: shorten large numbers with K/M suffixes when they exceed 6 digits (e.g. 200892 → "201K", 1500000 → "1.5M").
 

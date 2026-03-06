@@ -150,15 +150,16 @@ All `{{PLACEHOLDER}}` values must be replaced with actual data before writing to
   <text x="588" y="520" font-family="'JetBrains Mono',Menlo,Monaco,monospace"
         font-size="12" fill="{{TEXT_DIM}}">{{PERIOD_FROM}} — {{PERIOD_TO}}</text>
 
-  <!-- Commit Heatmap: 7 rows (Mon-Sun) x 12 cols (weeks). Each cell 8x8, gap 1px. -->
-  <!-- Origin: x=492, y=558. Generate 84 <rect> elements from heatmap[] array. -->
+  <!-- Commit Heatmap: 7 rows (Mon-Sun) x 12 cols (weeks). Each cell 10x10, gap 2px (12px pitch). -->
+  <!-- Origin: x=48, y=430 (left column, below Author/repo). -->
+  <!-- Grid size: 12 cols × 12px = 144px wide, 7 rows × 12px = 84px tall. -->
   <!-- Example (first 3 cells of week 0): -->
   <!--
-  <rect x="492" y="558" width="8" height="8" rx="2" fill="{{BAR_BG}}" />
-  <rect x="492" y="567" width="8" height="8" rx="2" fill="{{ACCENT}}" opacity="0.25" />
-  <rect x="492" y="576" width="8" height="8" rx="2" fill="{{ACCENT}}" opacity="0.75" />
+  <rect x="48" y="430" width="10" height="10" rx="2" fill="{{BAR_BG}}" />
+  <rect x="48" y="442" width="10" height="10" rx="2" fill="{{ACCENT}}" opacity="0.25" />
+  <rect x="48" y="454" width="10" height="10" rx="2" fill="{{ACCENT}}" opacity="0.75" />
   -->
-  <!-- Cell position: x = 492 + col*9, y = 558 + row*9 -->
+  <!-- Cell position: x = 48 + col*12, y = 430 + row*12 -->
   <!-- col = Math.floor(dayIndex / 7), row = dayIndex % 7 -->
   <!-- Color: count==0 → fill="{{BAR_BG}}", count==1 → accent opacity 0.25, -->
   <!--         count 2-3 → opacity 0.50, count 4-6 → opacity 0.75, count>=7 → opacity 1.0 -->
