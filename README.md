@@ -93,6 +93,7 @@ See `CLAUDE.md` for detailed writing guidelines.
 | [example-skill-pack](plugins/example-skill-pack/) | Example plugin demonstrating the plugin structure |
 | [dev-card](plugins/dev-card/) | Generate a developer identity card from git history |
 | [motion-graphics](plugins/motion-graphics/) | Create motion graphics with Remotion and Gemini AI |
+| [paper-dissector](plugins/paper-dissector/) | Analyze academic papers from PDF with structured analysis and visual cards |
 
 ## License
 

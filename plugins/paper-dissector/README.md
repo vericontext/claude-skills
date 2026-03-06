@@ -5,11 +5,19 @@ Deeply analyze academic papers from PDF. Extracts structured analysis, generates
 ## Install
 
 ```bash
-# Register marketplace (once)
+# 1. Register marketplace (once)
 claude plugin marketplace add https://github.com/vericontext/skillforge
 
-# Install
+# 2. Install
 claude plugin install paper-dissector
+```
+
+### Update
+
+```bash
+# Refresh marketplace index, then update
+claude plugin marketplace update
+claude plugin update paper-dissector
 ```
 
 ## Usage
