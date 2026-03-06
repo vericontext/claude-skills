@@ -6,7 +6,7 @@ Generate a developer identity card from your git history. Analyzes commit patter
 
 ```bash
 # One-time setup (add marketplace + install plugin)
-claude plugin marketplace add https://github.com/vericontext/claude-skills && claude plugin install dev-card
+claude plugin marketplace add https://github.com/vericontext/skillforge && claude plugin install dev-card
 ```
 
 ## Update
@@ -88,9 +88,9 @@ PNG conversion is automatic using platform-native tools (macOS `qlmanage`, Linux
 If you want to test locally without installing:
 
 ```bash
-git clone https://github.com/vericontext/claude-skills.git
+git clone https://github.com/vericontext/skillforge.git
 cd my-project
-claude --plugin-dir /path/to/claude-skills/plugins/dev-card
+claude --plugin-dir /path/to/skillforge/plugins/dev-card
 /dev-card
 ```
 

@@ -1,4 +1,4 @@
-# Claude Skills
+# Skillforge
 
 A monorepo for Claude Code skill plugins. Create, manage, and distribute skill plugins for Claude Code.
 
@@ -34,7 +34,7 @@ claude --plugin-dir plugins/my-plugin-name
 
 ```bash
 # 1. Register marketplace (once)
-claude plugin marketplace add https://github.com/vericontext/claude-skills
+claude plugin marketplace add https://github.com/vericontext/skillforge
 
 # 2. Install a plugin
 claude plugin install <plugin-name>
@@ -46,7 +46,7 @@ Always run `marketplace update` first to fetch the latest index, then update the
 
 ```bash
 claude plugin marketplace update
-claude plugin update <plugin-name>@claude-skills
+claude plugin update <plugin-name>@skillforge
 ```
 
 > **Note:** `plugin update` alone checks against the locally cached index. Without `marketplace update` first, it will report "already at the latest version" even when a new version exists.
@@ -60,7 +60,7 @@ claude --plugin-dir plugins/<plugin-name>
 ## Project Structure
 
 ```
-claude-skills/
+skillforge/
 ├── plugins/          # Each subdirectory is a deployable plugin
 ├── templates/        # Scaffolding templates
 ├── scripts/          # Automation scripts

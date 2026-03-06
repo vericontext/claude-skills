@@ -80,7 +80,7 @@ End users can install plugins without cloning the repo:
 
 ```bash
 # 1. Register this repo as a marketplace (once)
-claude plugin marketplace add https://github.com/vericontext/claude-skills
+claude plugin marketplace add https://github.com/vericontext/skillforge
 
 # 2. Install a specific plugin
 claude plugin install <plugin-name>

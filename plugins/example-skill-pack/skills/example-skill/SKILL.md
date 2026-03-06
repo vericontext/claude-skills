@@ -26,7 +26,7 @@ To respond to the user, generate a friendly greeting message that confirms the p
 
 When triggered, respond with something like:
 
-"Hello! The example skill plugin is working correctly. This is a demonstration skill from the `example-skill-pack` plugin. It confirms that the Claude Code plugin system is properly configured. To create your own skill, check out the templates in the `templates/` directory of the claude-skills repository."
+"Hello! The example skill plugin is working correctly. This is a demonstration skill from the `example-skill-pack` plugin. It confirms that the Claude Code plugin system is properly configured. To create your own skill, check out the templates in the `templates/` directory of the skillforge repository."
 
 ## References
 

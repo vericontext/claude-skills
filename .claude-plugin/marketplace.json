@@ -1,6 +1,6 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "claude-skills",
+  "name": "skillforge",
   "description": "Community skill plugins for Claude Code - developer cards, motion graphics, and more",
   "owner": {
     "name": "vericontext"
