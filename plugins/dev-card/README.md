@@ -2,13 +2,14 @@
 
 Generate a developer identity card from your git history. Analyzes commit patterns, assigns an AI persona, and renders a shareable SVG card.
 
-## Quick Start
+## Install
 
 ```bash
-claude --plugin-dir plugins/dev-card
+# One-time setup (add marketplace + install plugin)
+claude plugin marketplace add https://github.com/vericontext/claude-skills && claude plugin install dev-card
 ```
 
-Then in Claude Code:
+That's it. Now go to any git repo and run:
 
 ```
 /dev-card
@@ -37,6 +38,7 @@ A **1200x675 SVG** card optimized for Twitter/X sharing:
 ## Examples
 
 ```
+/dev-card
 /dev-card --theme=neon --badge
 /dev-card --lang=ko
 /dev-card --author="Jane Doe" --theme=light
@@ -58,6 +60,7 @@ All analysis is **100% local** - works with private repos, no data leaves your m
 
 ## Requirements
 
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) CLI
 - Git repository with 10+ commits
 - That's it. No Node.js, no npm, no build step.
 
@@ -77,6 +80,17 @@ If you need PNG for Twitter upload:
 - **macOS**: `sips -s format png dev-card.svg --out dev-card.png`
 - **Browser**: Open SVG, screenshot at 1200x675
 - **ImageMagick**: `convert dev-card.svg dev-card.png`
+
+## For Developers
+
+If you want to test locally without installing:
+
+```bash
+git clone https://github.com/vericontext/claude-skills.git
+cd my-project
+claude --plugin-dir /path/to/claude-skills/plugins/dev-card
+/dev-card
+```
 
 ## License
 
