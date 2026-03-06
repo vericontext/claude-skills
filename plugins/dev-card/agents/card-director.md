@@ -146,8 +146,9 @@ Convert SVG to PNG for direct Twitter/X upload. Try the following tools in order
 
 1. **qlmanage** (macOS built-in):
    ```bash
-   qlmanage -t -s 1200 -o $OUTPUT_DIR $OUTPUT_DIR/dev-card.svg 2>/dev/null && mv $OUTPUT_DIR/dev-card.svg.png $OUTPUT_DIR/dev-card.png
+   qlmanage -t -s 2400 -o $OUTPUT_DIR $OUTPUT_DIR/dev-card.svg 2>/dev/null && mv $OUTPUT_DIR/dev-card.svg.png $OUTPUT_DIR/dev-card.png
    ```
+   Note: use `-s 2400` (2x) for crisp rendering. qlmanage clips at the viewBox boundary, so the SVG must have all content within the viewBox.
 
 2. **rsvg-convert** (Linux, commonly pre-installed):
    ```bash
