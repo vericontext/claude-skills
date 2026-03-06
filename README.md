@@ -42,6 +42,12 @@ Then in any git repo:
 /dev-card
 ```
 
+### Update
+
+```bash
+claude plugin marketplace update && claude plugin update dev-card
+```
+
 ### Local testing (for development)
 
 ```bash
