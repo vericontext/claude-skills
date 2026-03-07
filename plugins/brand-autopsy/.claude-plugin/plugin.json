@@ -1,0 +1,8 @@
+{
+  "name": "brand-autopsy",
+  "version": "0.1.0",
+  "description": "Analyze any brand from its website URL. Extracts visual identity, positioning, trust signals, and conversion strategy across 10 dimensions. Generates structured analysis, markdown report, and a diagnostic visual card.",
+  "author": {
+    "name": "vericontext"
+  }
+}

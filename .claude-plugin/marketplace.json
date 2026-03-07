@@ -55,6 +55,16 @@
       },
       "source": "./plugins/paper-dissector",
       "category": "productivity"
+    },
+    {
+      "name": "brand-autopsy",
+      "description": "Analyze any brand from its website URL. Extracts visual identity, positioning, trust signals, and conversion strategy across 10 dimensions. Generates structured analysis, markdown report, and a diagnostic visual card.",
+      "version": "0.1.0",
+      "author": {
+        "name": "vericontext"
+      },
+      "source": "./plugins/brand-autopsy",
+      "category": "productivity"
     }
   ]
 }
